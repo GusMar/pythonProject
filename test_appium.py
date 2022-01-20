@@ -38,6 +38,17 @@ class AppiumTest(unittest.TestCase):
         print("===========  the login button is present " + str(butons) + " times ===========")
         assert len(self.driver.find_elements_by_xpath("//*[@text='Login']")) > 0
 
+    def test_other(self):
+        if len(self.driver.find_elements_by_xpath("//*[@text='OK']")) > 0:
+            self.driver.find_element_by_xpath("//*[@text='OK']").click();
+        # Find location of Elements and perform action.
+        self.driver.find_element_by_xpath("//*[@text='Username']").send_keys('company')
+        self.driver.find_element_by_xpath("//*[@text='Password']").send_keys('company')
+        # self.driver.find_element_by_xpath("//*[@text='Login']").click()
+        butons = len(self.driver.find_elements_by_xpath("//*[@text='Login']"))
+        print("===========  second test the other login button is present " + str(butons) + " times ===========")
+        assert len(self.driver.find_elements_by_xpath("//*[@text='Login']")) > 0
+
     def tearDown(self):
         self.driver.quit()
 
