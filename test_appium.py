@@ -11,8 +11,8 @@ class AppiumTest(unittest.TestCase):
 
     def setUp(self):
         # This is the Application and ‘app’ desired capability to specify a path to Appium.
-        self.dc['app'] = '/bitrise/src/pythonProject/resources/eribank.apk'
-        # self.dc['app'] = os.environ['BITRISE_SOURCE_DIR'] + '/resources/eribank.apk'
+        # self.dc['app'] = '/bitrise/src/pythonProject/resources/eribank.apk'
+        self.dc['app'] = os.environ['BITRISE_SOURCE_DIR'] + '/resources/eribank.apk'
         # self.dc['app'] = os.path.join( str(Path(__file__).parent),'resources', 'eribank.apk')
         # self.dc['app'] = os.path.join(str(Path(__file__).parent), 'resources', 'eribank.apk')
         # "C:\\Users\\gmarin\\PycharmProjects\\FirstPythonAppiumTest\\resources\\eribank.apk"
